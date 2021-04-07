@@ -46,15 +46,15 @@ const Exercise1 = () => {
   
     const integer: number = 6;
     const float: number = 6.66;
-    const hex: any = 0xf00d;
-    const binary: any = 0b1010011010;
-    const octal: any = 0o744;
+    const hex: number = 0xf00d;
+    const binary: number = 0b1010011010;
+    const octal: number = 0o744;
     const negZero:number = -0;
-    const actuallyNumber: any = NaN;
+    const actuallyNumber: number = NaN;
     const largestNumber: number = Number.MAX_VALUE;
     const mostBiglyNumber: number = Infinity;
   
-    const members: any[] = [
+    const members: number[] = [
       integer,
       float,
       hex,
@@ -66,7 +66,7 @@ const Exercise1 = () => {
       mostBiglyNumber
     ];
   
-    members[0] = '12345';
+    members[0] = 12345;
   
     console.log('[Exercise 1.4]', members);
   
@@ -75,11 +75,12 @@ const Exercise1 = () => {
     // • Add type annotations (as explicit as possible)
     // • Fix errors (if applicable)
   
-    const sequence:any[] = Array.from(Array(10).keys());
-    // const sequence:number[] = Array.<number>(Array(10).keys());
+    const sequence:number[] = Array.from(Array(10).keys());
+    // const sequence: array<number> = Array.from(Array(10).keys());
     const animals: string[] = ['pangolin', 'aardvark', 'echidna', 'binturong'];
-    const stringsAndNumbers: any[] = [1, 'one', 2, 'two', 3, 'three'];
-    const allMyArrays:any = [sequence, animals, stringsAndNumbers];
+    const stringsAndNumbers: (string|number)[] = [1, 'one', 2, 'two', 3, 'three'];
+    // const allMyArrays: Array<Array<number|string>> = [sequence, animals, stringsAndNumbers];
+    const allMyArrays: (number|string)[][] = [sequence, animals, stringsAndNumbers];
   
     console.log('Exercise 1.5', allMyArrays);
   
